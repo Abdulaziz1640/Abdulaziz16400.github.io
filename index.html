@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>D-savdo</title>
+	<script>
+	 	function calc(){
+       	var price = parseInt(document.querySelector('#price').value);
+       	var course = parseInt(document.querySelector('#course').value);
+       	var nalog = parseInt(document.querySelector('#nalog').value);
+       	var obnal = parseInt(document.querySelector('#obnal').value);
+       	var yolkira = parseInt(document.querySelector('#yolkira').value);
+       	var count = parseInt(document.querySelector('#count').value);
+       	var summa;
+       	var summakol;
+       	summa = (price * course) * ( 1 + (( nalog + obnal ) / 100)) + yolkira;
+       	document.querySelector("#result").innerHTML = summa + " sum";       	
+       }
+	 </script>
+	 <style>
+	 	*{
+	 		margin: 0;
+	 		padding: 0;
+	 	}
+	 	body{
+	 		font-family: sans-serif;
+	 	}
+	 	.form_inputs{
+	 		display: flex;
+	 		justify-content: center;
+	 		padding: 100px auto;
+	 		margin-top: 200px;
+	 		
+	 	}
+	 	form{
+	 		display: flex;
+	 	}
+	 	form .form_input{
+	 		margin-left: 10px
+	 		margin-bottom: 10px;
+	 		text-align: center;
+	 	}
+	 	form .form_input p {
+	 		margin-bottom: 10px;
+	 		color: #000;
+	 		font-size: 16px;
+	 		text-transform: uppercase;
+	 		font-weight: bold;
+	 	}
+	 	.form_input input{
+	 		margin-left: 30px;
+	 		width: 200px;
+	 		height: 50px;
+	 		font-size: 35px;
+	 		border-radius: 5px;
+	 		border: 2px solid grey;
+	 	}
+	 	.form_button {
+	 		margin-top: 20px;
+	 		display: flex;
+	 		justify-content: center;
+	 	}
+		.form_button button{
+			border-radius: 20px;
+			background: black;
+			color: white;
+			font-size: 20px;
+			width: 200px;
+			height: 50px;
+			border: 1px solid grey;
+		}
+	 	.form_button button:hover{
+			cursor: pointer;
+			transition: 0.8s;
+			border: 1px solid black;
+			background: white;
+			color: black;
+		}
+		#result{
+			margin-top: 20px;
+			text-align: center;
+		}
+	 </style>
+</head>
+<body>
+	<div class="form_inputs">
+		<form action="">
+			<div class="form_input">			
+				<p>Нарх $</p>
+				<input type="text" id="price">
+			</div>
+			<div class="form_input">				
+				<p>Курс</p>
+				<input type="text" id="course">
+			</div>
+			<div class="form_input">
+				<p>Налог %</p>
+				<input type="text" id="nalog" value="6">
+			</div>
+			<div class="form_input">
+				<p>Обнал йукотиш %</p>
+				<input type="text" id="obnal">
+			</div>
+			<div class="form_input">
+				<p>Йулкира сум</p>
+				<input type="text" id="yolkira">
+			</div>
+			<div class="form_input">
+				<p>Количества</p>
+				<input type="text" id="count">
+			</div>
+		</form>
+
+	</div>
+	<div class="form_button">
+				<button type="button" onclick="calc()">Calculate</button>
+			</div>
+	<h1 id="result"></h1>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
